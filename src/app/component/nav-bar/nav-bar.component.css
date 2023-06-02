@@ -1,0 +1,19 @@
+.form-control{
+    border-radius: 3px;
+    width: 70vh;
+    margin-left: 20px;
+    padding: 10px 8px;
+}
+
+.btn{
+    margin-left: 40vh;
+}
+
+h2{
+    color: rgba(0, 24, 157, 0.765);
+    font-size: xx-large;
+    padding-left: 100px;
+}
+
+
+

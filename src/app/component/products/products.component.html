@@ -1,0 +1,41 @@
+<div class="card-top container-fluied">
+    <div class="container d-flex ">
+        <div class="item">
+            <a (click)="filter('')">
+                <h6>All</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('men')">
+                <h6>Men's Clothing</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('jewelery')">
+                <h6>Jewelery</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title' | paginate:{itemsPerPage:itemsPerPage, currentPage:p} ">
+            <div class="card col-md-4 col-lg-3 shadow-lg p-3 mb-5 bg-white rounded">
+                <img src="{{item.image}}" alt="">
+                <div class="discription">
+                    <h5>{{item.title}}</h5>
+                    <p><strong>Price : </strong>${{item.price}}</p>
+                    <button class="btn btn-primary" (click)=addToCart(item)>Add to cart</button>
+                </div>
+             </div>
+        </ng-container>
+        
+    </div>
+</div>
+
+<footer>
+    <div>
+        <pagination-controls (pageChange)="p = $event" class="d-flex justify-content-center"></pagination-controls>
+    </div>
+</footer>
